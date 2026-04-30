@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(circle at top right, rgba(255, 192, 203, 0.1), transparent),
+              radial-gradient(circle at bottom left, rgba(255, 192, 203, 0.05), transparent),
+              #ffffff;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Elegant Hot Pink Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #f472b6; /* pink-400 */
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #db2777; /* pink-600 */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(219, 39, 119, 0.2);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(219, 39, 119, 0.5);
+}
+
+/* Glassmorphism & Depth */
+.glass-sidebar {
+  @apply bg-white/70 backdrop-blur-xl border-r border-pink-50;
+}
+
+.glass-panel {
+  @apply bg-white border border-pink-50 shadow-sm rounded-3xl transition-all duration-500;
+}
+
+.hover-glow:hover {
+  @apply shadow-2xl shadow-pink-500/10 -translate-y-1 border-pink-100;
+}
+
+/* Pulse & Glow Animations */
+@keyframes soft-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.02); opacity: 0.9; }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 4s infinite ease-in-out;
+}
+
+/* Level-Based Background Themes */
+.theme-basic {
+  background: radial-gradient(circle at top right, #fff5f7, #ffffff);
+}
+
+.theme-intermediate {
+  background: radial-gradient(circle at top right, #fdf2f8, #fbcfe8 100%);
+  background-attachment: fixed;
+}
+
+.theme-advanced {
+  background: linear-gradient(135deg, #111827 0%, #312e81 100%);
+  color: #fff !important;
+}
+
+.theme-advanced .glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.theme-advanced h1, .theme-advanced h2, .theme-advanced h3, .theme-advanced p, .theme-advanced span {
+  color: #f3f4f6 !important;
+}
+
+.theme-advanced .text-gray-900 {
+  color: #f9fafb !important;
+}
+
+.theme-advanced .text-gray-400 {
+  color: #9ca3af !important;
+}
+
+.pink-glow {
+  box-shadow: 0 0 20px rgba(219, 39, 119, 0.1);
+}
+
+.premium-glow {
+  box-shadow: 0 0 20px rgba(219, 39, 119, 0.15), 0 0 40px rgba(219, 39, 119, 0.1);
+  @apply border-pink-200/50;
+}
+
+.btn-primary {
+  @apply bg-pink-600 text-white font-black px-8 py-4 rounded-2xl shadow-lg shadow-pink-200 border-b-4 border-pink-800 active:border-b-0 active:translate-y-[4px] hover:bg-pink-500 hover:shadow-pink-300 transition-all flex items-center justify-center gap-2 uppercase italic tracking-[0.1em] text-[11px] scale-105;
+}
+
+
+.xp-bar-bg {
+  @apply bg-gray-50 h-3 rounded-full overflow-hidden border border-gray-100;
+}
+
+.xp-bar-fill {
+  @apply bg-gradient-to-r from-pink-400 to-pink-600 h-full transition-all duration-1000 ease-out relative overflow-hidden;
+}
+
+.xp-bar-fill::after {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-full bg-white/20 -skew-x-12 translate-x-full animate-[shimmer_2s_infinite];
+}
+
+/* Premium Gamified Buttons */
+.btn-primary {
+  @apply bg-pink-600 text-white font-black px-8 py-4 rounded-2xl shadow-lg shadow-pink-200 border-b-4 border-pink-800 active:border-b-0 active:translate-y-[4px] hover:bg-pink-500 transition-all flex items-center justify-center gap-2 uppercase italic tracking-[0.1em] text-[10px];
+}
+
+.btn-secondary {
+  @apply bg-gray-900 text-white font-black px-6 py-3 rounded-2xl shadow-lg shadow-gray-200 border-b-4 border-gray-950 active:border-b-0 active:translate-y-[4px] hover:bg-gray-800 transition-all flex items-center justify-center gap-2 uppercase italic tracking-[0.1em] text-[10px];
+}
+
+.btn-ghost {
+  @apply bg-pink-50 text-pink-600 font-black px-6 py-3 rounded-2xl hover:bg-pink-100 transition-all flex items-center justify-center gap-2 uppercase italic tracking-[0.1em] text-[10px];
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white font-black px-6 py-3 rounded-2xl shadow-lg shadow-red-100 border-b-4 border-red-700 active:border-b-0 active:translate-y-[4px] hover:bg-red-600 transition-all flex items-center justify-center gap-2 uppercase italic tracking-[0.1em] text-[10px];
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) skewX(-12deg); }
+  100% { transform: translateX(100%) skewX(-12deg); }
+}
+
